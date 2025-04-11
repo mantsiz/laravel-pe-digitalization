@@ -35,7 +35,7 @@
     .kpi-title {
         font-size: 40px;
         font-weight: bold;
-        color: black;
+        color: #006D77;
         flex-grow: 1;
         text-align: center;
     }
