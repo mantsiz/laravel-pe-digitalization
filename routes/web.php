@@ -14,6 +14,7 @@ use App\Http\Controllers\ProductionPainting2Controller;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\CampaignController;
+use App\Http\Controllers\KohosoController;
 
 
 /*
@@ -76,6 +77,11 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::post('/abnormalities', [ProductionResin2::class, 'storeAbnormality'])->name('abnormalities.store');
     Route::get('/productionpainting', [ProductionPaintingController::class, 'indexPainting'])->name('painting');
     Route::get('/productionpainting2', [ProductionPainting2Controller::class, 'indexPainting2'])->name('painting');
+    Route::get('/kohoso', [KohosoController::class, 'index'])->name('kohoso.index');
+    Route::post('/kohoso', [KohosoController::class, 'store'])->name('kohoso.store');
+    Route::get('/kohoso/{kohoso}/edit', [KohosoController::class, 'edit'])->name('kohoso.edit');
+    Route::put('/kohoso/{kohoso}', [KohosoController::class, 'update'])->name('kohoso.update');
+    Route::delete('/kohoso/{kohoso}', [KohosoController::class, 'destroy'])->name('kohoso.destroy');
     Route::get('/community/profile', function () {
         return view('pages/community/profile');
     })->name('profile');
