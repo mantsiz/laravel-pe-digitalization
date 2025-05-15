@@ -9,11 +9,11 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('kohosos', function (Blueprint $table) {
             $table->id();
-            $table->year('year');
+            $table->integer('year');
             $table->string('project_name');
             $table->string('line');
             $table->string('part');

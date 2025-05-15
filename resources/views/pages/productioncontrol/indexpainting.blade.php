@@ -130,19 +130,20 @@
         overflow: auto;
         padding: 20px;
     }
-
     .header {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 20px;
         display: flex;
         align-items: center;
-        justify-content: flex-start;
-        padding: 10px;
+        justify-content: space-between;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     }
-
     .company-logo {
         width: 120px;
         margin-right: 20px;
     }
-
     .kpi-title {
         font-size: 40px;
         font-weight: bold;
@@ -150,31 +151,26 @@
         flex-grow: 1;
         text-align: center;
     }
-
     .container-fluid {
         display: flex;
         align-items: flex-start;
     }
-
     .chapter-container {
         display: flex;
         flex-direction: column;
         gap: 15px;
         width: 250px;
     }
-
     .chapter-container {
         width: 250px;
         background-color: #f8f9fa;
         padding: 15px;
         border-right: 1px solid #ddd;
     }
-
     .charts-container {
         flex-grow: 1;
         padding-left: 30px;
-    }
-    
+    }  
     .chapter-box {
         background: green;
         color: white;
@@ -182,38 +178,31 @@
         border-radius: 8px;
         text-align: center;
     }
-
     .chapter-box h4 {
         margin-bottom: 10px;
     }
-
     .chapter-box h4 {
         margin-bottom: 15px;
     }
-
     .chapter-box ul {
         list-style-type: none;
         padding: 0;
     }
-
     .chapter-box ul li {
         background: rgba(255, 255, 255, 0.2);
         padding: 8px;
         margin-bottom: 5px;
         border-radius: 3px;
     }
-
     .charts-container {
         flex-grow: 1;
         padding-left: 30px;
     }
-
     .chart-row {
         display: flex;
         justify-content: space-between;
         margin-bottom: 20px;
     }
-
     .chart-box {
         background: white;
         padding: 20px;
@@ -221,30 +210,25 @@
         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
         width: 48%;
     }
-
     .chart-box h5 {
         color: black; 
     }
-
     .menu-item {
         cursor: pointer;
         padding: 5px;
         list-style: none;
         transition: background 0.3s;
     }
-
     .menu-item:hover, .menu-item.active {
         background-color: #007bff;
         color: white;
         border-radius: 5px;
     }
-
     /* Styling untuk konten */
     .content-container {
         flex-grow: 1;
         padding: 20px;
     }
-
     .content-section {
         display: none;
         padding: 15px;
@@ -252,14 +236,12 @@
         background-color: #ffffff;
         margin-top: 10px;
     }
-
     .menu-item.active {
         font-weight: bold;
         color: white;
         background-color: #007bff;
         padding: 5px;
         border-radius: 5px;
-}
-    
+}  
 </style>
 @endsection

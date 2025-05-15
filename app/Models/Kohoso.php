@@ -9,5 +9,6 @@ class Kohoso extends Model
 {
     use HasFactory;
 
+    protected $table = 'kohosos';
     protected $fillable = ['year', 'project_name', 'line', 'part'];
 }

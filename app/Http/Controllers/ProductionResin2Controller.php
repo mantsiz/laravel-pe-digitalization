@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Machine;
 use App\Models\Abnormality;
 
-class ProductionResin2 extends Controller
+class ProductionResin2Controller extends Controller
 {
     /**
      * Menampilkan halaman utama

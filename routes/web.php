@@ -4,17 +4,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataFeedController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AttendanceController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\InvoiceController;
-use App\Http\Controllers\ProductionResin;
-use App\Http\Controllers\ProductionResin2;
+use App\Http\Controllers\ProductionResinController;
+use App\Http\Controllers\ProductionResin2Controller;
 use App\Http\Controllers\ProductionResin3Controller;
 use App\Http\Controllers\ProductionPaintingController;
 use App\Http\Controllers\ProductionPainting2Controller;
 use App\Http\Controllers\TransactionController;
-use App\Http\Controllers\JobController;
-use App\Http\Controllers\CampaignController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\KohosoController;
+use App\Http\Controllers\BudgetController;
 
 
 /*
@@ -43,69 +41,39 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/attendance/{id}/edit', [AttendanceController::class, 'edit'])->name('attendance.edit');
     Route::put('/attendance/{id}', [AttendanceController::class, 'update'])->name('attendance.update');
     Route::delete('/attendance/{id}', [AttendanceController::class, 'destroy'])->name('attendance.destroy');
-    Route::get('/ecommerce/shop', function () {
-        return view('pages/ecommerce/shop');
-    })->name('shop');    
-    Route::get('/ecommerce/shop-2', function () {
-        return view('pages/ecommerce/shop-2');
-    })->name('shop-2');     
-    Route::get('/ecommerce/product', function () {
-        return view('pages/ecommerce/product');
-    })->name('product');
-    Route::get('/ecommerce/cart', function () {
-        return view('pages/ecommerce/cart');
-    })->name('cart');    
-    Route::get('/ecommerce/cart-2', function () {
-        return view('pages/ecommerce/cart-2');
-    })->name('cart-2');    
-    Route::get('/ecommerce/cart-3', function () {
-        return view('pages/ecommerce/cart-3');
-    })->name('cart-3');    
-    Route::get('/ecommerce/pay', function () {
-        return view('pages/ecommerce/pay');
-    })->name('pay');     
-    Route::get('/campaigns', [CampaignController::class, 'index'])->name('campaigns');
-    Route::get('/orders', [OrderController::class, 'index'])->name('orders');
-    Route::get('/invoices', [InvoiceController::class, 'index'])->name('invoices');
-    Route::get('/productionresin', [ProductionResin::class, 'indexResin'])->name('resin');
-    Route::get('/productionresin2', [ProductionResin2::class, 'index'])->name('productionresin2.index');
+    Route::get('/productionresin', [ProductionResinController::class, 'indexResin'])->name('resin');
+    Route::get('/productionresin2', [ProductionResin2Controller::class, 'index'])->name('productionresin2.index');
     Route::get('/productionresin3', [ProductionResin3Controller::class, 'index'])->name('productionresin3');
     Route::post('/productionresin3/store', [ProductionResin3Controller::class, 'store'])->name('productionresin3.store');
     Route::get('/productionresin3/{id}/edit', [ProductionResin3Controller::class, 'edit'])->name('productionresin3.edit');
     Route::put('/productionresin3/{id}', [ProductionResin3Controller::class, 'update'])->name('productionresin3.update');
     Route::delete('/productionresin3/{id}', [ProductionResin3Controller::class, 'destroy'])->name('productionresin3.destroy');
-    Route::post('/abnormalities', [ProductionResin2::class, 'storeAbnormality'])->name('abnormalities.store');
+    Route::post('/abnormalities', [ProductionResin2Controller::class, 'storeAbnormality'])->name('abnormalities.store');
     Route::get('/productionpainting', [ProductionPaintingController::class, 'indexPainting'])->name('painting');
     Route::get('/productionpainting2', [ProductionPainting2Controller::class, 'indexPainting2'])->name('painting');
     Route::get('/kohoso', [KohosoController::class, 'index'])->name('kohoso.index');
     Route::post('/kohoso', [KohosoController::class, 'store'])->name('kohoso.store');
     Route::get('/kohoso/{kohoso}/edit', [KohosoController::class, 'edit'])->name('kohoso.edit');
     Route::put('/kohoso/{kohoso}', [KohosoController::class, 'update'])->name('kohoso.update');
-    Route::delete('/kohoso/{kohoso}', [KohosoController::class, 'destroy'])->name('kohoso.destroy');
-    Route::get('/community/profile', function () {
-        return view('pages/community/profile');
-    })->name('profile');
-    Route::get('/community/feed', function () {
-        return view('pages/community/feed');
-    })->name('feed');     
-    Route::get('/community/forum', function () {
-        return view('pages/community/forum');
-    })->name('forum');
-    Route::get('/community/forum-post', function () {
-        return view('pages/community/forum-post');
-    })->name('forum-post');    
-    Route::get('/community/meetups', function () {
-        return view('pages/community/meetups');
-    })->name('meetups');    
-    Route::get('/community/meetups-post', function () {
-        return view('pages/community/meetups-post');
-    })->name('meetups-post');    
-    Route::get('/finance/cards', function () {
-        return view('pages/finance/credit-cards');
-    })->name('credit-cards');
+    Route::delete('/kohoso/{kohoso}', [KohosoController::class, 'destroy'])->name('kohoso.destroy');    
+    Route::get('/projectpreparation/addproject', function () {
+        return view('pages/projectpreparation/addproject');
+    })->name('add-project');
+    Route::get('/projectpreparation/masterschedule', function () {
+        return view('pages/projectpreparation/masterschedule');
+    })->name('master-schedule');
+    Route::get('/projectpreparation/documents', function () {
+        return view('pages/projectpreparation/documents');
+    })->name('documents');
+    Route::post('/project', [ProjectController::class, 'store'])->name('project.store');
+    Route::get('/projectpreparation/tooling', function () {
+        return view('pages/projectpreparation/tooling');
+    })->name('tooling');
+    Route::get('/projectpreparation/processline', function () {
+        return view('pages/projectpreparation/processline');
+    })->name('process-line');
     Route::get('/finance/transactions', [TransactionController::class, 'index01'])->name('transactions');
     Route::get('/finance/transaction-details', [TransactionController::class, 'index02'])->name('transaction-details');
-    Route::get('/job/job-listing', [JobController::class, 'index'])->name('job-listing');
     Route::get('/job/job-post', function () {
         return view('pages/job/job-post');
     })->name('job-post');    
@@ -115,18 +83,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/messages', function () {
         return view('pages/messages');
     })->name('messages');
-    Route::get('/tasks/kanban', function () {
-        return view('pages/tasks/tasks-kanban');
-    })->name('tasks-kanban');
+    Route::get('/gorika/gorikasection', function () {
+        return view('pages.gorikaactivity.gorikasection');
+    })->name('gorikasection');
     Route::get('/tasks/list', function () {
         return view('pages/tasks/tasks-list');
-    })->name('tasks-list');       
-    Route::get('/inbox', function () {
-        return view('pages/inbox');
-    })->name('inbox'); 
-    Route::get('/calendar', function () {
-        return view('pages/calendar');
-    })->name('calendar'); 
+    })->name('tasks-list');  
     Route::get('/settings/account', function () {
         return view('pages/settings/account');
     })->name('account');  
@@ -145,24 +107,21 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/settings/feedback', function () {
         return view('pages/settings/feedback');
     })->name('feedback');
-    Route::get('/utility/changelog', function () {
-        return view('pages/utility/changelog');
-    })->name('changelog');  
+    Route::get('/gorika/gorikasection', function () {
+        return view('pages.gorikaactivity.gorikasection');
+    })->name('gorikasection');  
+    Route::get('/people/peopledev', function () {
+        return view('pages.peopledevelopment.peopledev');
+    })->name('peopledev');
+    Route::get('/safety/safetyact', function () {
+        return view('pages.safetyactivity.safetyact');
+    })->name('safetyact');     
     Route::get('/utility/roadmap', function () {
         return view('pages/utility/roadmap');
-    })->name('roadmap');  
-    Route::get('/utility/faqs', function () {
-        return view('pages/utility/faqs');
-    })->name('faqs');  
-    Route::get('/utility/empty-state', function () {
-        return view('pages/utility/empty-state');
-    })->name('empty-state');  
+    })->name('roadmap'); 
     Route::get('/utility/404', function () {
         return view('pages/utility/404');
     })->name('404');
-    Route::get('/utility/knowledge-base', function () {
-        return view('pages/utility/knowledge-base');
-    })->name('knowledge-base');
     Route::get('/kohoso', function () {
         return view('pages/documents/kohoso');
     })->name('kohoso');   
@@ -217,4 +176,15 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::fallback(function() {
         return view('pages/utility/404');
     });    
+    Route::get('/finance/transaction-details', [TransactionController::class, 'index02'])->name('transaction-details');
+    
+    // Budget routes
+    Route::get('/budget', [BudgetController::class, 'index'])->name('budget.index');
+    Route::post('/budget', [BudgetController::class, 'store'])->name('budget.store');
+    Route::put('/budget/{budget}', [BudgetController::class, 'update'])->name('budget.update');
+    Route::delete('/budget/{budget}', [BudgetController::class, 'destroy'])->name('budget.destroy');
+    
+    Route::get('/messages', function () {
+        return view('pages/messages');
+    })->name('messages');
 });

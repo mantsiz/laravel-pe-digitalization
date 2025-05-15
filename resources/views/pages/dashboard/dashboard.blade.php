@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
+    <div class="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto bg-white dark:bg-gray-900">
 
         <!-- Dashboard actions -->
         <div class="sm:flex sm:justify-between sm:items-center mb-8">
@@ -19,11 +19,11 @@
                 <x-datepicker />
 
                 <!-- Add view button -->
-                <button class="btn bg-gray-900 text-gray-100 hover:bg-gray-800 dark:bg-gray-100 dark:text-gray-800 dark:hover:bg-white">
+                <button class="btn bg-indigo-500 text-white hover:bg-indigo-600 dark:bg-indigo-600 dark:hover:bg-indigo-700">
                     <svg class="fill-current shrink-0 xs:hidden" width="16" height="16" viewBox="0 0 16 16">
                         <path d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
                   </svg>
-                  <span class="max-xs:sr-only">Add View</span>
+                  <span class="max-xs:sr-only">Tambah View</span>
                 </button>
                 
             </div>
@@ -34,13 +34,13 @@
         <div class="grid grid-cols-12 gap-6">
 
             <!-- Line chart (Acme Plus) -->
-            <x-dashboard.dashboard-card-01 :dataFeed="$dataFeed" />
+            <x-dashboard.dashboard-card-01 :dataFeed="$dataFeed ?? null" />
 
             <!-- Line chart (Acme Advanced) -->
-            <x-dashboard.dashboard-card-02 :dataFeed="$dataFeed" />
+            <x-dashboard.dashboard-card-02 :dataFeed="$dataFeed ?? null" />
 
             <!-- Line chart (Acme Professional) -->
-            <x-dashboard.dashboard-card-03 :dataFeed="$dataFeed" />
+            <x-dashboard.dashboard-card-03 :dataFeed="$dataFeed ?? null" />
 
             <!-- Bar chart (Direct vs Indirect) -->
             <x-dashboard.dashboard-card-04 />
@@ -75,4 +75,20 @@
         </div>
 
     </div>
+
+    <!-- Script untuk memastikan grafik dimuat dengan benar -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Pastikan mode gelap tidak aktif secara default jika tidak diinginkan
+            document.documentElement.classList.remove('dark');
+            
+            // Cek apakah ada error pada komponen
+            console.log('Dashboard loaded');
+            
+            // Refresh komponen jika diperlukan
+            setTimeout(function() {
+                window.dispatchEvent(new Event('resize'));
+            }, 500);
+        });
+    </script>
 </x-app-layout>

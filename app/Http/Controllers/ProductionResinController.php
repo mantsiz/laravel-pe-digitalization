@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class ProductionResin extends Controller
+class ProductionResinController extends Controller
 {
     public function indexResin()
     {
