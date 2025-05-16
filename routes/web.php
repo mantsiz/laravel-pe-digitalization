@@ -9,10 +9,11 @@ use App\Http\Controllers\ProductionResin2Controller;
 use App\Http\Controllers\ProductionResin3Controller;
 use App\Http\Controllers\ProductionPaintingController;
 use App\Http\Controllers\ProductionPainting2Controller;
-use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\KohosoController;
 use App\Http\Controllers\BudgetController;
+use App\Http\Controllers\GorikaDetailController;
+use App\Http\Controllers\GorikaImprovementController;
 
 
 /*
@@ -72,14 +73,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/projectpreparation/processline', function () {
         return view('pages/projectpreparation/processline');
     })->name('process-line');
-    Route::get('/finance/transactions', [TransactionController::class, 'index01'])->name('transactions');
-    Route::get('/finance/transaction-details', [TransactionController::class, 'index02'])->name('transaction-details');
-    Route::get('/job/job-post', function () {
-        return view('pages/job/job-post');
-    })->name('job-post');    
-    Route::get('/job/company-profile', function () {
-        return view('pages/job/company-profile');
-    })->name('company-profile');
     Route::get('/messages', function () {
         return view('pages/messages');
     })->name('messages');
@@ -130,10 +123,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     })->name('joken');   
     Route::get('/history-problem', function () {
         return view('pages/documents/history-problem');
-    })->name('history-problem');   
-    Route::get('/gorika', function () {
-        return view('pages/documents/gorika');
-    })->name('gorika');
+    })->name('history-problem');
     Route::get('/component/button', function () {
         return view('pages/component/button-page');
     })->name('button-page');
@@ -176,15 +166,28 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::fallback(function() {
         return view('pages/utility/404');
     });    
-    Route::get('/finance/transaction-details', [TransactionController::class, 'index02'])->name('transaction-details');
-    
     // Budget routes
     Route::get('/budget', [BudgetController::class, 'index'])->name('budget.index');
     Route::post('/budget', [BudgetController::class, 'store'])->name('budget.store');
     Route::put('/budget/{budget}', [BudgetController::class, 'update'])->name('budget.update');
     Route::delete('/budget/{budget}', [BudgetController::class, 'destroy'])->name('budget.destroy');
-    
     Route::get('/messages', function () {
         return view('pages/messages');
     })->name('messages');
+    // Gorika Activity Routes
+    Route::get('/gorika', [GorikaDetailController::class, 'index'])->name('gorika.index');
+    Route::get('/gorika/create', [GorikaDetailController::class, 'create'])->name('gorika.create');
+    Route::post('/gorika', [GorikaDetailController::class, 'store'])->name('gorika.store');
+    Route::get('/gorika/{gorika}', [GorikaDetailController::class, 'show'])->name('gorika.show');
+    Route::get('/gorika/{gorika}/edit', [GorikaDetailController::class, 'edit'])->name('gorika.edit');
+    Route::put('/gorika/{gorika}', [GorikaDetailController::class, 'update'])->name('gorika.update');
+    Route::delete('/gorika/{gorika}', [GorikaDetailController::class, 'destroy'])->name('gorika.destroy');
+    // Gorika Improvement Routes
+    Route::get('/gorika-improvement', [GorikaImprovementController::class, 'index'])->name('gorika-improvement.index');
+    Route::get('/gorika-improvement/create', [GorikaImprovementController::class, 'create'])->name('gorika-improvement.create');
+    Route::post('/gorika-improvement', [GorikaImprovementController::class, 'store'])->name('gorika-improvement.store');
+    Route::get('/gorika-improvement/{gorikaImprovement}', [GorikaImprovementController::class, 'show'])->name('gorika-improvement.show');
+    Route::get('/gorika-improvement/{gorikaImprovement}/edit', [GorikaImprovementController::class, 'edit'])->name('gorika-improvement.edit');
+    Route::put('/gorika-improvement/{gorikaImprovement}', [GorikaImprovementController::class, 'update'])->name('gorika-improvement.update');
+    Route::delete('/gorika-improvement/{gorikaImprovement}', [GorikaImprovementController::class, 'destroy'])->name('gorika-improvement.destroy');
 });

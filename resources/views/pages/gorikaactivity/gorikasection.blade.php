@@ -39,7 +39,55 @@
                 </div>
                 <div class="card-body">
                     <div class="summary-content">
-                        <p class="highlight-text">Gorika (Good Kaizen Activity) adalah inisiatif peningkatan berkelanjutan yang berfokus pada efisiensi produksi dan kualitas di seluruh lini produksi otomotif.</p>
+                        <div class="definition-section">
+                            <h3>a. Definisi</h3>
+                            <p>Istilah "gorika" (合理化) dalam bahasa Jepang berarti "rasionalisasi" atau "efisiensi". Kata ini digunakan dalam konteks bisnis, industri, dan manajemen untuk menggambarkan upaya meningkatkan efisiensi, mengurangi pemborosan, dan menyederhanakan proses untuk mencapai hasil yang lebih baik dengan biaya yang lebih rendah.</p>
+                        </div>
+                        
+                        <div class="implementation-section">
+                            <h3>b. Penerapan Gorika di Industri Otomotif</h3>
+                            <p>Dalam industri otomotif, "gorika" (合理化) diterapkan melalui berbagai cara untuk meningkatkan efisiensi dan mengurangi pemborosan. Beberapa contoh penerapannya adalah:</p>
+                            
+                            <div class="implementation-item">
+                                <div class="icon">🚗</div>
+                                <div class="content">
+                                    <h4>1. Just-in-Time (JIT) Production</h4>
+                                    <p>Produksi suku cadang dan komponen hanya ketika diperlukan, sehingga mengurangi stok berlebih dan biaya penyimpanan. Toyota adalah pelopor metode ini dengan sistem "Toyota Production System" (TPS).</p>
+                                </div>
+                            </div>
+                            
+                            <div class="implementation-item">
+                                <div class="icon">🔄</div>
+                                <div class="content">
+                                    <h4>2. Lean Manufacturing</h4>
+                                    <p>Menerapkan prinsip produksi ramping (lean) untuk mengidentifikasi dan menghilangkan aktivitas yang tidak memberikan nilai tambah, seperti waktu tunggu, proses yang berulang, dan transportasi tidak efisien.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="implementation-item">
+                                <div class="icon">🔧</div>
+                                <div class="content">
+                                    <h4>3. Automation and Robotics</h4>
+                                    <p>Memanfaatkan teknologi otomatisasi untuk meningkatkan konsistensi dan akurasi dalam proses produksi, mengurangi kesalahan manusia, dan meningkatkan kecepatan produksi.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="implementation-item">
+                                <div class="icon">⚙️</div>
+                                <div class="content">
+                                    <h4>4. Quality Control Optimization</h4>
+                                    <p>Memperbaiki proses pengendalian kualitas dengan metode seperti "Kaizen" (perbaikan berkelanjutan) dan "Poka-Yoke" (mekanisme anti-kesalahan) untuk meminimalisir produk cacat.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="implementation-item">
+                                <div class="icon">♻️</div>
+                                <div class="content">
+                                    <h4>5. Energy and Resource Efficiency</h4>
+                                    <p>Mengurangi konsumsi energi dan bahan baku melalui teknologi hemat energi dan daur ulang material. Penerapan "gorika" ini bertujuan untuk mencapai hasil maksimal dengan biaya minimal dan waktu yang lebih singkat, tanpa mengorbankan kualitas produk.</p>
+                                </div>
+                            </div>
+                        </div>
                         
                         <div class="principles">
                             <h3>5 Prinsip Utama</h3>
@@ -91,7 +139,7 @@
                         <div class="timeline-item completed">
                             <div class="timeline-point"></div>
                             <div class="timeline-content">
-                                <div class="timeline-date">10 Mei 2023</div>
+                                <div class="timeline-date">10 Mei 2025</div>
                                 <h4>Optimasi Line Assembly A3</h4>
                                 <p>Peningkatan output produksi sebesar 15% melalui reorganisasi workstation dan optimasi alur kerja.</p>
                                 <div class="timeline-tags">
@@ -115,7 +163,7 @@
                         <div class="timeline-item">
                             <div class="timeline-point"></div>
                             <div class="timeline-content">
-                                <div class="timeline-date">Mulai 15 Juli 2023</div>
+                                <div class="timeline-date">Mulai 15 Juli 2025</div>
                                 <h4>Standarisasi Proses QC</h4>
                                 <p>Pengembangan standar baru untuk proses quality control dengan target reduksi waktu inspeksi 20%.</p>
                                 <div class="timeline-tags">
@@ -141,7 +189,7 @@
                     <div class="metrics-container">
                         <div class="metrics-item">
                             <div class="metrics-header">
-                                <h4>Assembly</h4>
+                                <h4>SC1 Resin</h4>
                                 <div class="metrics-value">85%</div>
                             </div>
                             <div class="metrics-bar">
@@ -154,7 +202,7 @@
                         </div>
                         <div class="metrics-item">
                             <div class="metrics-header">
-                                <h4>Painting</h4>
+                                <h4>SC1 Painting</h4>
                                 <div class="metrics-value">65%</div>
                             </div>
                             <div class="metrics-bar">
@@ -167,7 +215,7 @@
                         </div>
                         <div class="metrics-item">
                             <div class="metrics-header">
-                                <h4>Welding</h4>
+                                <h4>SC1 Packing</h4>
                                 <div class="metrics-value">75%</div>
                             </div>
                             <div class="metrics-bar">
@@ -180,7 +228,7 @@
                         </div>
                         <div class="metrics-item">
                             <div class="metrics-header">
-                                <h4>Stamping</h4>
+                                <h4>SC1 PC</h4>
                                 <div class="metrics-value">45%</div>
                             </div>
                             <div class="metrics-bar">
@@ -191,6 +239,59 @@
                                 <span>14 Implementasi</span>
                             </div>
                         </div>
+                        <div class="metrics-item">
+                            <div class="metrics-header">
+                                <h4>SC1 Quality</h4>
+                                <div class="metrics-value">75%</div>
+                            </div>
+                            <div class="metrics-bar">
+                                <div class="metrics-fill" style="width: 75%; background-color: #36b9cc;"></div>
+                            </div>
+                            <div class="metrics-detail">
+                                <span>36 Ide Kaizen</span>
+                                <span>27 Implementasi</span>
+                            </div>
+                        </div>
+                        <div class="metrics-item">
+                            <div class="metrics-header">
+                                <h4>SC2 Resin</h4>
+                                <div class="metrics-value">75%</div>
+                            </div>
+                            <div class="metrics-bar">
+                                <div class="metrics-fill" style="width: 75%; background-color: #4e73df;"></div>
+                            </div>
+                            <div class="metrics-detail">
+                                <span>36 Ide Kaizen</span>
+                                <span>27 Implementasi</span>
+                            </div>
+                        </div>
+                        <div class="metrics-item">
+                            <div class="metrics-header">
+                                <h4>SC2 Painting</h4>
+                                <div class="metrics-value">75%</div>
+                            </div>
+                            <div class="metrics-bar">
+                                <div class="metrics-fill" style="width: 75%; background-color: #1cc88a;"></div>
+                            </div>
+                            <div class="metrics-detail">
+                                <span>36 Ide Kaizen</span>
+                                <span>27 Implementasi</span>
+                            </div>
+                        </div>
+                        <div class="metrics-item">
+                            <div class="metrics-header">
+                                <h4>SC2 PC</h4>
+                                <div class="metrics-value">75%</div>
+                            </div>
+                            <div class="metrics-bar">
+                                <div class="metrics-fill" style="width: 75%; background-color: #f6c23e;"></div>
+                            </div>
+                            <div class="metrics-detail">
+                                <span>36 Ide Kaizen</span>
+                                <span>27 Implementasi</span>
+                            </div>
+                        </div>
+                        <a href="{{ route('gorika.index') }}" class="submit-button">Detail Activity</a>
                     </div>
                 </div>
             </div>
@@ -755,6 +856,15 @@
     .resource-list li a:hover {
         background: var(--light);
         transform: translateX(5px);
+    }
+    .submit-button {
+            background-color: #E67E22;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
     }
     /* Responsive Adjustments */
     @media (max-width: 992px) {
